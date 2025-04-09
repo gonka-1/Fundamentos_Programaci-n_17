@@ -26,3 +26,11 @@ variablelogic = False"""
 #Nombre = input ("Diime tu nombre: ")
 #Apellido = input ("Dime tu apellido: ")
 
+N1 = int(input('Dame un numero entero:'))
+N2 = float(input('Dame un numero decimal:'))
+
+#operacion
+
+R1 = N1 + N2
+
+print (f'El resultado final es:', {R1})
