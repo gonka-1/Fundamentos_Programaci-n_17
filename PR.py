@@ -71,3 +71,42 @@ R4 = N7 / N8
 print(f'El resultado de la division es:', {R4})
 
 print('Felicidades completaste todas las operaciones!!!')
+
+
+'''
+Necesito ir a hacer la compra y se me ocurre hacer una lista en python
+1. Como primer mensaje, deseo mostrarle al usuario un mensaje de bienvenida
+2. Agregar los productos
+3. Mostrar un mensaje al usuario de añade tus productos
+4. Mostrar un mensaje al usuario si desea eliminar alguno de los productos
+5. Al final, imprimir la lista
+'''
+print("Bienvenido a la lista de compras")
+
+productos = []
+
+print ("\nPor favor, añade tus productos. Escribe 'fin' cuando termines.")
+
+while True:
+    agregar = input("\nProducto: ")
+    if agregar.lower() == "fin":
+        break
+    productos.append(agregar)
+
+respuesta = input("Desea eliminar algun producto? (Si/No): ")
+
+if respuesta.lower() == "si":
+    print("Que producto desea eliminar? Escribe 'fin' para finalizar: ")
+    while True:
+        eliminar = input("Eliminar: ")
+        if eliminar.lower() == "fin":
+            break
+        if eliminar in productos:
+            productos.remove(eliminar)
+            print(f'{eliminar} ha sido eliminado.')
+        else:
+            print(f'{eliminar} no está en la lista')
+
+print("Tu lista final de productos:")
+print(productos)
+
