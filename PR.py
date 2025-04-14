@@ -110,3 +110,24 @@ if respuesta.lower() == "si":
 print("Tu lista final de productos:")
 print(productos)
 
+
+Actividad programación:
+
+"""Una tienda de perfume llamda Glory el representante de venta de la tienda de perfume necesita organizar
+el formulario de venta y el piensa que representando el siguiente formulario podria mejorar sus ventas:
+ya que el formulario que tiene actualmente tiene 10 items, campos que desea implementar: Número de boleta,
+Número de identificación, Nombre del cliente y productos del pedido.
+Productos del inventario: 
+-Perfume organza para dama 
+-Katy Perry
+-Mañana fresca para dama
+-La mejor noche para dama
+-Sueño exclusivo para dama
+-Ahora si voy para caballero
+-Antonio Bandera
+-Lacoste 
+-A que te quito el sueño para caballero 
+colocarle precio: 
+50ml 10mil 
+100ml 18mil 
+Añadir todo el pedido, todo el subtotal mas el iva(19%)."""
