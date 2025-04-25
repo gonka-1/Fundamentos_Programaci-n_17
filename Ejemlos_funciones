@@ -111,23 +111,36 @@ print("Tu lista final de productos:")
 print(productos)
 
 
-Actividad programación:
+def saludo():
+  Nombre = input ('Dime tu nombre: ')
+  print(f'\nHola, ', Nombre)
+ 
+saludo()
+ 
 
-"""Una tienda de perfume llamda Glory el representante de venta de la tienda de perfume necesita organizar
-el formulario de venta y el piensa que representando el siguiente formulario podria mejorar sus ventas:
-ya que el formulario que tiene actualmente tiene 10 items, campos que desea implementar: Número de boleta,
-Número de identificación, Nombre del cliente y productos del pedido.
-Productos del inventario: 
--Perfume organza para dama 
--Katy Perry
--Mañana fresca para dama
--La mejor noche para dama
--Sueño exclusivo para dama
--Ahora si voy para caballero
--Antonio Bandera
--Lacoste 
--A que te quito el sueño para caballero 
-colocarle precio: 
-50ml 10mil 
-100ml 18mil 
-Añadir todo el pedido, todo el subtotal mas el iva(19%)."""
+
+def Suma (a, b):
+  return a + b 
+
+Resultado = Suma (5+6)
+
+print(f'El resultado es: ', Resultado)
+
+
+
+#Otra tipo de suma: 
+
+Dato_01 = input('\nDame tu primer numero: ')
+print (f'tipo de dato recibido: ', type(Dato_01))
+
+numero = int(Dato_01) 
+resultado = numero + 10
+
+print ('Resultado es: ', resultado)
+
+
+
+lista = ['Manzana', 'Mandarina', 'Naranaja']
+
+for i, item in enumerate (lista):
+ print (i+1,'.',item)
