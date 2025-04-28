@@ -22,20 +22,20 @@ Monto_cancelado= int (input('\nIngrese su monto cancelado:'))
 
 Puntos_agregados = (Monto_cancelado * 10) /1000 + Puntos
 
-print (f'Sus puntos actuales son:{Puntos_agregados}')
+print ('Sus puntos actuales son:', int(Puntos_agregados))
 
 
-if Puntos >= 1000:
+if Puntos_agregados >= 1000:
 
     print ('\nEres integrante del del grupo premiun, felicidades!!!')
     print (f'Tienes un descuiento del 25% en tu proxima compra')
 
-elif Puntos >= 500:
+elif Puntos_agregados >= 500:
 
     print ('\nEres integrate del grupo oro, felicidades!!!')
     print (f'Tienes un descuento del 10% en tu proxima compra')
 
-elif Puntos >= 250:
+elif Puntos_agregados >= 250:
   print ('\nEres integrante del grupo bronce, felicidades!!!')
   for i, item in enumerate (Premio):
     print (i+1,'.',item)
