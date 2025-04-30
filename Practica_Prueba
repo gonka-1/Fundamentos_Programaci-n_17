@@ -1,0 +1,107 @@
+""""ejercicio 1: Desarrolla un programa en python: que permite calcular el subsidio de gas segun el quintil de ingreso al que pertenece la familia del
+solicitante y sus condiciones laborales, condiciones socioeconomicas:
+1. quintil de ingreso: 5 en total
+1= menos ingreso, 5 = mayor ingreso
+-condiciones laborales: se considera si la persona esta desempleada o empleada
+-condiciones de subsidio de gas: $$$
+-tabla con tres columnas : quintil, condicion laboral y subsidio de gas 
+-primera condicion 1 o 2 como quintil
+- desempleado
+- 10000
+2: dato 
+1 o 2 como quintil 
+empleado 
+subsidio 8000
+3: 3
+desempleada 
+subsidio de 6000
+4: 3
+empleado
+4000
+5: 4 o 5 
+cualquier condicion laboral
+1500
+cerrar, bono adicionales: si el solicitante pertenece al quintil 1 o 2 recibira un bono adicional de 2000. Si ademas tiene 65 años: recibira
+un bono extra de 3000 """
+
+#Quintil: 
+
+print ('\n===Bienvenido a subsidio de gas===')
+
+nombre = input('\nPor favor, ingrese su nombre:')
+
+edad = int(input('\nPor favor, ingrese su edad: '))
+
+condicion_laboral = input('\nPor favor, ingrese su condicion laboraL(Empleado/Desempleado): ')
+
+while True: 
+ try: 
+   quintil = int(input('ingrese el quintil de ingreso de: (1 a 5): '))
+ except ValueError:
+   print ('Quintil no valido, vuelva a intentar')
+   continue
+ if quintil in [1 , 2] :
+    if condicion_laboral == 'desempleado': 
+     print ('\nFelicidades, obtuviste un subsidio de 10.000 pesos!!!')
+     Bono_extra = ('\nPor ser perteneciente a este grupo recibes un bono de 2.000 pesos!!!')
+    elif condicion_laboral == 'empleado':
+     print ('\nFelicides recibiste un subsido de 8.000 pesos!!!')
+     print ('\nPor ser perteneciente a este grupo recibes un bono de 2.000 pesos!!!')   
+    if edad >= 65: 
+       Bono_edad = ('\nFelicidades tambien recibiste un bono de 3.000 pesos! ')
+       break
+ elif quintil == [3]:
+  if condicion_laboral == 'desempleado':
+   print ('Felicidades recibiste un bono de 6.000 pesos!!!')
+   if condicion_laboral == 'empleado':
+     print ('No perteneces a ningun subsidio')
+     break
+ elif quintil in [4 , 5]:
+  if condicion_laboral in ['empleado','desempleado']: 
+    print ('Felicidades recibiste un subsidio de 1.500 pesos!')
+    break
+
+
+#Hehco por la ia: 
+
+
+def calcular_subsidio(quintil, condicion_laboral, edad):
+    subsidio = 0
+    bono_adicional = 0
+
+    if quintil in [1, 2]:
+        if condicion_laboral.lower() == "desempleado":
+            subsidio = 10000
+        else:
+            subsidio = 8000
+        bono_adicional += 2000
+        if edad >= 65:
+            bono_adicional += 3000
+    elif quintil == 3:
+        if condicion_laboral.lower() == "desempleado":
+            subsidio = 6000
+        else:
+            subsidio = 4000
+    elif quintil in [4, 5]:
+        subsidio = 1500
+    else:
+        print("Quintil inválido. Debe ser un número entre 1 y 5.")
+        return None
+
+    total = subsidio + bono_adicional
+    return total
+
+
+# Ejemplo de uso:
+print("=== Calculadora de Subsidio de Gas ===")
+try:
+    quintil = int(input("Ingrese el quintil de ingreso (1 a 5): "))
+    condicion_laboral = input("¿Está empleado o desempleado?: ").strip()
+    edad = int(input("Ingrese su edad: "))
+
+    resultado = calcular_subsidio(quintil, condicion_laboral, edad)
+    if resultado is not None:
+        print(f"Subsidio total asignado: ${resultado}")
+except ValueError:
+    print("Por favor, ingrese valores válidos.")
+
