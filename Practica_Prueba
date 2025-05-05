@@ -62,46 +62,54 @@ while True:
     break
 
 
-#Hehco por la ia: 
+#Resuelto:
 
 
-def calcular_subsidio(quintil, condicion_laboral, edad):
-    subsidio = 0
-    bono_adicional = 0
+def Quintil_final (Quintil, edad, laburo):
+ subtotal = 0
+ bono_adicional = 0
 
-    if quintil in [1, 2]:
-        if condicion_laboral.lower() == "desempleado":
-            subsidio = 10000
-        else:
-            subsidio = 8000
-        bono_adicional += 2000
-        if edad >= 65:
-            bono_adicional += 3000
-    elif quintil == 3:
-        if condicion_laboral.lower() == "desempleado":
-            subsidio = 6000
-        else:
-            subsidio = 4000
-    elif quintil in [4, 5]:
-        subsidio = 1500
-    else:
-        print("Quintil inválido. Debe ser un número entre 1 y 5.")
-        return None
+ if Quintil in [1 , 2]:
+   if laburo == 'desempleado': 
+     subtotal = 10000
+   else:
+     subtotal = 8000
+     bono_adicional += 3000
+ elif Quintil == 3:
+   if laburo == 'empleado':
+     subtotal = 6000
+   else:
+     print ('No eres apto para ningun subsidio')
+ elif Quintil in [4, 5]:
+   subtotal = 1500
 
-    total = subsidio + bono_adicional
-    return total
+ else:
+   print ('Quintil no valido, vuleva  intentar')
+   return None
+ 
+ if edad >= 65:
+   subtotal += 2000
 
+ 
+ total = bono_adicional + subtotal
+ return total
 
-# Ejemplo de uso:
-print("=== Calculadora de Subsidio de Gas ===")
-try:
-    quintil = int(input("Ingrese el quintil de ingreso (1 a 5): "))
-    condicion_laboral = input("¿Está empleado o desempleado?: ").strip()
-    edad = int(input("Ingrese su edad: "))
+print ('===Calculadora de gas===')
 
-    resultado = calcular_subsidio(quintil, condicion_laboral, edad)
-    if resultado is not None:
-        print(f"Subsidio total asignado: ${resultado}")
+try: 
+ Quintil = int(input('Ingresa su numero de quintil de (1 a 5):'))
+ laburo = input('ingresa tu estado laboral (desempleado / empleado): ').lower()
+ edad = int(input('ingresa su edad: '))
+ 
+ resultado_final = Quintil_final (Quintil, edad, laburo)
+ if resultado_final is not None:
+   print ('Su subsidio final es:', resultado_final)
 except ValueError:
-    print("Por favor, ingrese valores válidos.")
+  print('Datos invalidos vuelva a ingresar')
+ 
+"""el supermercado acuenta necesita desarrollar un software en python que le permita llevar la merma de las devoluciones
+-merma: considerar la perdida del 25% del pollo, si el dia miercoles recibimos 1000kg de pollo, el dia jueves recibimos 1200kg de pollo
+y el sabado solo 500g, consideremos la merma de esa semana, realizar una lista de 10 productos, relaizar devoluvion de 3 productos que no deban superar
+el mayor de los precios, mostrar en pantalla los productos que cumplan el 20% seguido por la merma de la semana, al cerrar el progama debe accionar un boton ej: fin.  """
+
 
