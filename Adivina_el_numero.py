@@ -45,6 +45,42 @@ if intento == resultado_adivinar:
   Resultado_final = round(intento / resultado_adivinar, 4)
   print (f'\nEste es tu resultado final:{Resultado_final}')
 
+#Con pista 
+
+print('===Bienvenido a adivina el numero===')
+
+import random as rd
+
+rango_inferior = int(input('\ndame tu limite inferior: '))
+rango_superior = int(input('\ndame tu rango superior: '))
+
+resultado_adivinar = rd.randint(rango_inferior, rango_superior)
+intentos = 2
+
+while intentos >= 0:
+    intento = int(input('\ningresa un numero: '))
+    
+    if intento == resultado_adivinar:
+        print('Felicidades, adivinaste!!!')
+        break
+    elif intento < resultado_adivinar:
+        print('Muy bajo')
+    else:
+        print('Muy alto')
+    
+    if intentos == 1:
+        # Mostrar pista en el segundo intento
+        if resultado_adivinar % 2 == 0:
+            print('Pista: el número es PAR.')
+        else:
+            print('Pista: el número es IMPAR.')
+    
+    intentos -= 1
+else:
+    print('\nTenías solo 3 intentos, suerte la próxima vez')
+
+
+
  
 
 
