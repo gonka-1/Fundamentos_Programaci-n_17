@@ -1,0 +1,54 @@
+"""with open('Datos.txt','r') as archivo:
+  cantidad = int(input('indica cuantos estudiantes quieres ingresar:'))
+  
+  for i in range(cantidad):
+        print(f'Ingresa datos del estudiante: {i+1}')
+        nombre = input ('Nombre del estudiante:')
+        edad = input ('Edad del estudiante:')
+        carrera = input ('Carrera del estudiante:')
+        promedio = float(input ('promedio del estudiante:'))
+            
+        archivo.write(f'Estudiante: {i+1}\n') 
+        archivo.write(f'Nombre: {nombre}\n')
+        archivo.write(f'Edad: {edad}\n')
+        archivo.write(f'carrera: {carrera}\n') 
+        archivo.write(f'promedio: {promedio}\n')"""
+
+#IA:
+
+def obtener_ultimo_numero_estudiante(nombre_archivo):
+    try:
+        with open(nombre_archivo, 'r') as archivo:
+            lineas = archivo.readlines()
+            # Buscar desde el final hacia atrás
+            for linea in reversed(lineas):
+                if linea.startswith("Estudiante:"):
+                    numero = int(linea.strip().split(":")[1])
+                    return numero
+    except FileNotFoundError:
+        # Si el archivo no existe, empezar desde cero
+        return 0
+    return 0  # Si no se encuentra ninguna línea con "Estudiante:"
+
+# Nombre del archivo donde se guardan los datos
+nombre_archivo = 'Datos.txt'
+
+# Obtener el último número de estudiante guardado
+ultimo_estudiante = obtener_ultimo_numero_estudiante(nombre_archivo)
+
+with open(nombre_archivo, 'a') as archivo:
+    cantidad = int(input('Indica cuántos estudiantes quieres ingresar: '))
+
+    for i in range(cantidad):
+        numero_estudiante = ultimo_estudiante + i + 1
+        print(f'\nIngresa datos del estudiante: {numero_estudiante}')
+        nombre = input('Nombre del estudiante: ')
+        edad = input('Edad del estudiante: ')
+        carrera = input('Carrera del estudiante: ')
+        promedio = float(input('Promedio del estudiante: '))
+
+        archivo.writeli(f'Estudiante: {numero_estudiante}\n')
+        archivo.write(f'Nombre: {nombre}\n')
+        archivo.write(f'Edad: {edad}\n')
+        archivo.write(f'Carrera: {carrera}\n')
+        archivo.write(f'Promedio: {promedio}\n')
