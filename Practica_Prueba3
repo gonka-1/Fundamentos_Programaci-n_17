@@ -108,3 +108,20 @@ while True:
     if salir == 's':
         print('Gracias por usar el sistema de entradas. ¡Hasta luego!')
         break  # Sale del ciclo y termina el programa
+
+
+"""programa que permita registrar los libros prestados en una biblioteca y que le permita contar cualquiera fuera prestado por mas de 15 dias.
++ Ingresar la cantidad de libros a registrar
++  Este numero debe de ser entenro
++ Para cada libro, se debe pedir el nombre del libro y la cantidad de dias a prestar. el programa debe registrar si el libro tiene 'prestamo po mas de 15 dias' o 'Prestamo
+por menos de 15 dias'
+
++ Al final se debe mostar cuantos libros tienen mas de 15 dias de prestamo y cuantos no. todos los datos numericos deben de ser verificados por un exit. """
+
+"""Programa en python que permita gestionar un sistema simple de ventas para una fonda que presenta al usuario los siguientes productos:
++ Empanadas de pino : 2000
++ Empanadas de queso: 1500
++ Choripanes: 2500
++ Terremoto: 1000
+Por su compra mayor a 10mil pesos recibe un descuento del 25% (0.25), por su compra mayor a 20mil recibe un descento de 40% (0.4) y finalmente por su compra mayor a los dos 
+tus entradas te salen gratis. Entrada: ????????????????????????"""
