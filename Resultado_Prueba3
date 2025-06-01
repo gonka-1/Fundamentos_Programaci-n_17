@@ -1,0 +1,97 @@
+#Ejercicio #1:
+
+cantidad_pacientes = 0
+paciente_mas = 0
+paciente_menos = 0
+
+print('=== Bienvenido a la clinica dental ===')
+while True:
+ try:
+    Numero = int(input('Ingrese la cantidad de pacientes a registrar: '))
+    if Numero <= 0:
+     print('El numero debe ser mayor a 0')
+     continue
+    break
+ except ValueError:
+   print('Error: el numero ingresado debe ser un numero entero')
+
+cantidad_pacientes = Numero
+
+for i in range(Numero):
+    while True:
+       try:
+          tratamiento_aplicados = int(input(f'Ingrese la cantidad de tratamientos realizados del paciente #{i+1}: '))
+          if tratamiento_aplicados <= 0:
+              print('Debe ingresar un numero mayor a 0')
+              continue
+          break
+       except ValueError:
+        print('Debe ingresar un numero entero')
+     
+ 
+ 
+    if tratamiento_aplicados <= 2:
+      print('2 o menos tratamientos\n')
+      paciente_menos += 1
+    else:
+      print('Mas de 2 tratamientos\n')
+      paciente_mas += 1
+
+print ('=== Resumen ===')
+print(f'Se registraron {paciente_mas} con mas de 2 tratamientos')
+print(f'Se registraron {paciente_menos} con 2 o menos tratamientos')
+
+
+
+#Ejercicio 2:
+
+
+lista = []
+numero_ingresado = 0
+
+
+while True:
+ print ('=== MENÚ PRINCIPAL ===')
+ print ('[1].Ingresar numero.')
+ print ('[2].Mostrar Mayor')
+ print ('[3].Mostrar total de números ingresados')
+ print ('[4].Salir')
+ 
+ Opcion = int(input('Elije opción: '))
+
+ if Opcion == 1:
+   while True:
+     try:
+      Ingreso_numero = int(input('Ingresa un numero entre 0 y 100: '))
+      if Ingreso_numero < 0 or Ingreso_numero > 100:
+         print('Debe ingresar un número entre 0 y 100!!')
+         continue
+      else:
+         print('Ingreso exitoso')
+      break
+     except ValueError:
+      print('Debe ingresar un numero entero!!')
+
+   numero_ingresado += 1
+   lista.append(Ingreso_numero)
+
+ elif Opcion == 2:
+    
+    if numero_ingresado == 0:
+      print('No se ha ingresado numeros')
+    else:
+      print('El numero mayor hasta el momento es:', max(lista))
+ 
+ elif Opcion == 3:
+   
+   if numero_ingresado == 0:
+    print('No se ha ingresado números')
+   else:
+    print(f'El total de numero ingresado es: {numero_ingresado}')
+
+ elif Opcion == 4:
+  print ('Fin del programa. Adios!')
+  break
+ else:
+  print('Debe ingresar una opción valida')
+ continue
