@@ -1,0 +1,65 @@
+# Listas
+
+cursos = []
+print("")
+contador = 0
+opcion = ""
+while opcion != "n":
+ 
+  nombre = input("Ingrese el nombre del alumno: ")
+  direccion = input("Ingrese la dirección del alumno: ")
+  telefono = input("Ingrese el teléfono del alumno: ")
+
+  alumno = []
+  alumno = [nombre,direccion,telefono]
+  
+  cursos.append(alumno)
+  
+  contador += 1
+  if contador == 30:
+     opcion = "n"
+     print("")
+  else:
+    opcion = input("Desea agregar otro alumno (s/n): ")
+    print("")
+
+for alumno in cursos:
+  print("Nombre: " ,alumno[0])
+  print("Dirección: ", alumno[1])
+  print("Teléfono: ", alumno[2])
+  print("")
+
+#Diccionarios
+
+cursos = []
+contador = 0
+opcion = ""
+
+while opcion != "n":
+    nombre = input("Ingrese el nombre del alumno: ")
+    direccion = input("Ingrese la dirección del alumno: ")
+    telefono = input("Ingrese el teléfono del alumno: ")
+
+    alumno = {
+        "nombre": nombre,
+        "direccion": direccion,
+        "telefono": telefono
+    }
+    cursos.append(alumno)
+    contador += 1
+
+    if contador == 30:
+        print("Se ha alcanzado el límite de 30 alumnos.")
+        opcion = "n"
+    else:
+        opcion = input("¿Desea agregar otro alumno? (s/n): ").lower()
+
+    print("")
+
+print("Listado de alumnos ingresados:\n")
+
+for alumno in cursos:
+    print(f"Nombre: {alumno['nombre']}")
+    print(f"Dirección: {alumno['direccion']}")
+    print(f"Teléfono: {alumno['telefono']}")
+    print("")
